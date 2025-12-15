@@ -44,9 +44,8 @@ public class MainActivity extends AppCompatActivity {
 
         if(camposValidados){
 
-            //convertendo valores
-            Double valorAlcool = Double.parseDouble(precoAlcool);
-            Double valorGasosa = Double.parseDouble(precoGasolina);
+            Double valorAlcool = converteValores(precoAlcool);
+            Double valorGasosa = converteValores(precoGasolina);
 
             textResultado.setText(calculo(valorAlcool, valorGasosa));
 
@@ -54,8 +53,6 @@ public class MainActivity extends AppCompatActivity {
         }else {
             textResultado.setText("Preencha os preços primeiro!");
         }
-
-
 
     }
 
@@ -83,5 +80,10 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return texto;
+    }
+
+    public Double converteValores(String valorLitro){
+
+        return Double.parseDouble(valorLitro);
     }
 }
